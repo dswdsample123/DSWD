@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with Logo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="image/519105681_1035252668494054_6207119069225091430_n.png" alt="Logo">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Innovations</a></li>
+      <li><a href="#">News & Events</a></li>
+      <li><a href="#">e-Services</a></li>
+      <li><a href="#">Programs & Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Form with Logo -->
+  <div class="form-container">
+    <div class="form-logo">
+      <img src="image/243154780_195419605954969_2872574316942423611_n.png" alt="Form Logo">
+    </div>
+    <div class="form-box">
+      <h2>Fill-up Form</h2>
+      <form id="registerForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="idName">Name on ID:</label>
+        <input type="text" id="idName" name="idName" required>
+        <p class="note">⚠️ Ilagay ang pangalan eksakto kung paano nakasulat sa ID.</p>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="2" required></textarea>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+
+        <label for="children">How Many Child:</label>
+        <input type="number" id="children" name="children">
+
+        <label for="job">Trabaho:</label>
+        <input type="text" id="job" name="job">
+
+        <!-- ID Selection -->
+        <label for="idtype">Pumili ng ID:</label>
+        <select id="idtype" name="idtype" required>
+          <option value="">-- Piliin ang ID --</option>
+          <option value="umid">UMID</option>
+          <option value="tin">TIN</option>
+          <option value="passport">Passport</option>
+          <option value="drivers">Driver’s License</option>
+          <option value="voter">Voter’s ID</option>
+        </select>
+
+        <label for="idupload">Upload Selected ID:</label>
+        <input type="file" id="idupload" name="idupload" accept="image/*,application/pdf" required>
+        <p class="note">⚠️ Siguraduhin na tugma ang napiling ID at ang larawang i-upload.</p>
+
+        <!-- Face Recognition -->
+        <label for="face">Face Recognition (Upload Photo):</label>
+        <input type="file" id="face" name="face" accept="image/*" capture="user" required>
+        <p class="note">⚠️ Kailangan mag-match ang mukha mo sa ID na na-upload.</p>
+
+        <div id="errorMsg" style="color: red; margin: 10px 0;"></div>
+
+        <button type="button" id="submitBtn">I-submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Receipt -->
+  <div id="receipt" class="receipt" style="display: none;">
+    <h2>Registration Receipt</h2>
+    <p><strong>Name:</strong> <span id="rName"></span></p>
+    <p><strong>Age:</strong> <span id="rAge"></span></p>
+    <p><strong>Address:</strong> <span id="rAddress"></span></p>
+    <p><strong>Phone:</strong> <span id="rPhone"></span></p>
+    <p><strong>Children:</strong> <span id="rChildren"></span></p>
+    <p><strong>Trabaho:</strong> <span id="rJob"></span></p>
+    <p><strong>ID Type:</strong> <span id="rIdType"></span></p>
+    <p><strong>ID Upload:</strong><br><img id="rIdUpload" width="200"></p>
+    <p><strong>Face Recognition:</strong><br><img id="rFace" width="200"></p>
+    <h3 style="color: lime;">✅ Registered Successfully!</h3>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
